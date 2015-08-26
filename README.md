@@ -1,9 +1,6 @@
 # Overview
 
-## Motivation
-
-## 
-
+A simple exercise in using Vagrant and Ansible to provision and inventory of hosts with an installation of nginx, a virtual host, and a simple static page.
 # Installation
 
 ## Prerequisites
