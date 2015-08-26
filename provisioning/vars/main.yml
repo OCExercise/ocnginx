@@ -1,0 +1,18 @@
+---
+
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+  - "8000"
+
+nginx_worker_connections: 1024
+
+nginx_vhosts: [{
+  listen: "8000",
+  server_name: "ocnginx", # default: N/A
+  root: "/var/www/ocnginx", # default: N/A
+  index: "index.html index.htm", # default: "index.html index.htm"
+
+}]

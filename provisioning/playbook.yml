@@ -1,0 +1,18 @@
+---
+- hosts: ocnginx 
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.nginx
+
+  tasks:
+    - name: "Create ocngix log path"
+      file: path=/var/log/nginx/ocnginx owner=nginx group=adm state=directory
+    - name: "Create ocnginx default web root"
+      file: path=/var/www/ocnginx owner=nginx group=adm state=directory
+    - name: "Upload ocnginx index"
+      copy: src=templates/index.html dest=/var/www/ocnginx/index.html mode=0644
